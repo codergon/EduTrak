@@ -1,40 +1,34 @@
+import dayjs from "dayjs";
 import TodoList from "./TodoList";
 import { padding } from "../../utils";
+import Constants from "expo-constants";
 import PendingTasks from "./PendingTasks";
-import { Image, StyleSheet } from "react-native";
-import { MdText } from "../../components/StyledText";
+import { StyleSheet } from "react-native";
+import Topbar from "../../components/layouts/Topbar";
 import { RootTabScreenProps } from "../../types/types";
-import { SafeAreaView, Text, View } from "../../components/Themed";
+import { SafeAreaView, View } from "../../components/Themed";
 
 export default function HomeScreen({ navigation }: RootTabScreenProps<"Home">) {
+  const statusBarHeight = Constants.statusBarHeight;
+
   return (
-    <SafeAreaView style={styles.container}>
-      <View style={styles.topBar}>
-        <MdText style={styles.title}>Welcome back</MdText>
-        <View style={styles.imageContainer} lightColor="#ddd" darkColor="#888">
-          <Image
-            style={{ width: "100%", height: "100%", borderRadius: 40 }}
-            source={{
-              uri: "https://ik.imagekit.io/alphaknight/download-modified_rgWfhs6ea.png",
-            }}
-          />
-        </View>
-      </View>
+    <View style={[styles.container, { paddingTop: statusBarHeight + 18 }]}>
+      <Topbar title="Today" subtitle={dayjs().format("dddd DD MMMM")} />
 
       {/*  RECENTLY ASSIGNED TASK */}
       <PendingTasks />
 
       {/* TodoList */}
       <TodoList />
-    </SafeAreaView>
+    </View>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    paddingTop: 34,
     paddingHorizontal: 20,
+    flexDirection: "column",
   },
 
   topBar: {

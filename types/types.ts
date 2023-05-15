@@ -4,6 +4,8 @@ import {
   NavigatorScreenParams,
 } from "@react-navigation/native";
 import { NativeStackScreenProps } from "@react-navigation/native-stack";
+import { QuizAnswer } from "./common";
+import { StudyTaskProp } from "./study";
 
 declare global {
   namespace ReactNavigation {
@@ -11,10 +13,19 @@ declare global {
   }
 }
 
+// APP SCREENS
 export type RootStackParamList = {
-  Root: NavigatorScreenParams<RootTabParamList> | undefined;
-  Modal: undefined;
+  Modal: {
+    data: StudyTaskProp["item"]["questions"];
+  };
   NotFound: undefined;
+  // AUTH SCREENS
+  SignIn: undefined;
+  Register: undefined;
+
+  // APP SCREENS
+  Console: undefined;
+  Root: NavigatorScreenParams<RootTabParamList> | undefined;
 };
 
 export type RootStackScreenProps<Screen extends keyof RootStackParamList> =
@@ -22,9 +33,26 @@ export type RootStackScreenProps<Screen extends keyof RootStackParamList> =
 
 export type RootTabParamList = {
   Home: undefined;
-  Study: undefined;
-  Files: undefined;
+  Study: NavigatorScreenParams<StudyStackParamList> | undefined;
+  Courses: undefined;
   Profile: undefined;
+};
+
+export type StudyStackParamList = {
+  Assigned: undefined;
+  AttemptScreen: {
+    taskId: string;
+    taskInfo: StudyTaskProp["item"];
+  };
+  ViewResponses: {
+    taskId: string;
+    taskInfo: StudyTaskProp["item"];
+  };
+  IndividualResponses: {
+    taskInfo: StudyTaskProp["item"];
+    quizAnswer: QuizAnswer;
+  };
+  CreatedTasks: undefined;
 };
 
 export type RootTabScreenProps<Screen extends keyof RootTabParamList> =

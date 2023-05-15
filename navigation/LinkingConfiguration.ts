@@ -11,18 +11,46 @@ const linking: LinkingOptions<RootStackParamList> = {
         screens: {
           Home: {
             screens: {
-              HomeScreen: "one",
+              HomeScreen: "home",
             },
           },
-          Files: {
+          Courses: {
             screens: {
-              FilesScreen: "two",
+              FilesScreen: "Files",
+            },
+          },
+          Study: {
+            screens: {
+              Console: "Console",
+              Assigned: "Assigned",
+              CreatedTasks: "CreatedTasks",
+              AttemptScreen: "AttemptScreen",
+              ViewResponses: "ViewResponses",
+              IndividualResponses: "IndividualResponses",
             },
           },
         },
       },
       Modal: "modal",
       NotFound: "*",
+    },
+  },
+};
+
+export const authLinking: LinkingOptions<RootStackParamList> = {
+  prefixes: [Linking.createURL("/")],
+  config: {
+    screens: {
+      SignIn: {
+        screens: {
+          SignIn: "signin",
+        },
+      },
+      Register: {
+        screens: {
+          Register: "register",
+        },
+      },
     },
   },
 };

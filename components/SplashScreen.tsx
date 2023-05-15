@@ -1,12 +1,12 @@
 import { StyleSheet } from "react-native";
-import { SafeAreaView } from "../../components/Themed";
-import { BdText, MdText } from "../../components/StyledText";
+import { SafeAreaView } from "./Themed";
+import { BdText } from "./StyledText";
 
 const SplashScreen = () => {
   return (
     <SafeAreaView style={styles.container}>
-      <MdText style={{ fontSize: 24, letterSpacing: 0.5 }}>Optick</MdText>
-      <MdText
+      <BdText style={{ fontSize: 24, letterSpacing: 0.5 }}>EduTrak</BdText>
+      <BdText
         style={{
           fontSize: 12,
           color: "#aaa",
@@ -14,8 +14,8 @@ const SplashScreen = () => {
           letterSpacing: 0.5,
         }}
       >
-        Safe haven to improve
-      </MdText>
+        Streamline Assessments, Maximize Results
+      </BdText>
     </SafeAreaView>
   );
 };

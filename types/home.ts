@@ -5,5 +5,11 @@ export interface TodoItemProp {
 
 export interface TaskItemProp {
   index: number;
-  item: { id: string; due: string; course: string; lecturer: string };
+  item: {
+    id: string;
+    due: string;
+    course: string;
+    lecturer: string;
+    photo?: string;
+  };
 }

@@ -25,7 +25,7 @@ const TodoItem = ({ item, index }: TodoItemProp) => {
 
       <Pressable
         onPress={() => {
-          setDone((p) => !p);
+          setDone(p => !p);
         }}
         style={{ padding: 4 }}
       >

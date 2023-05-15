@@ -51,3 +51,52 @@ export const mockTasks = [
     lecturer: "Dr. H. Collins",
   },
 ];
+
+export const mockAssigned = [
+  {
+    id: "1",
+    due: "36 min",
+    course: "eee401",
+    lecturer: " Dr. Funmilayo Offiong",
+    photo: "https://faces-img.xcdn.link/image-lorem-face-1626.jpg",
+  },
+  {
+    id: "2",
+    due: "50 min",
+    course: "cve403",
+    lecturer: "Engr. A. R. Maxwell",
+    photo: "https://faces-img.xcdn.link/image-lorem-face-2190.jpg",
+  },
+  {
+    id: "3",
+    due: "2 hours",
+    course: "Tpd507",
+    lecturer: "Prof. Albert Trey",
+    photo: "https://faces-img.xcdn.link/image-lorem-face-754.jpg",
+  },
+  {
+    id: "4",
+    due: "8 hours",
+    course: "ser002",
+    lecturer: "Dr. H. Collins",
+    photo: "https://faces-img.xcdn.link/image-lorem-face-4391.jpg",
+  },
+];
+
+export const mockCreated = [
+  {
+    id: "1",
+    due: "36 min",
+    course: "eee401",
+  },
+  {
+    id: "2",
+    due: "50 min",
+    course: "cve403",
+  },
+  {
+    id: "3",
+    due: "2 hours",
+    course: "Tpd507",
+  },
+];

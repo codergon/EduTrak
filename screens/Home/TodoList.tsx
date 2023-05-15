@@ -61,7 +61,7 @@ const TodoList = () => {
             <TodoItem item={item} index={index} />
           )}
           decelerationRate="fast"
-          keyExtractor={(item) => item.id}
+          keyExtractor={item => item.id}
           showsVerticalScrollIndicator={false}
           snapToInterval={Layout.appWidth + 16}
           showsHorizontalScrollIndicator={false}
